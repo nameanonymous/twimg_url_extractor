@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Twimg URL extractor</title>
+  <meta name="description" content="Xの投稿URLから、画像と動画の twimg リンクを取り出します。">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Twimg URL extractor</h1>
+      <p class="lead">Xの投稿URLを入れてボタンを押すと、画像と動画の twimg リンクが出ます。</p>
+    </header>
+
+    <form id="extract-form">
+      <label for="post-url">投稿URL</label>
+      <div class="row">
+        <input
+          id="post-url"
+          name="url"
+          type="text"
+          inputmode="url"
+          autocomplete="off"
+          spellcheck="false"
+          placeholder="https://x.com/user/status/1234567890"
+          required
+        >
+        <button type="submit" id="extract-button">抽出する</button>
+      </div>
+    </form>
+
+    <p id="message" role="status"></p>
+    <ul id="results"></ul>
+  </main>
+
+  <footer>
+    <p>公開投稿だけ取れます。取得はブラウザから行い、このサイトのサーバーにはURLを送りません。</p>
+    <a href="https://github.com/nameanonymous/twimg-url-extractor">ソースコード</a>
+  </footer>
+
+  <div id="ad-overlay" hidden>
+    <div class="ad-card" role="dialog" aria-modal="true" aria-labelledby="ad-title">
+      <p id="ad-title" class="ad-kicker">広告</p>
+      <!--
+        広告コードは、この #ad-slot の中身と差し替えます。
+        形の正しい投稿URLで「抽出する」を押すと、結果の前に約3秒表示されます。
+        手順は README.md です。
+      -->
+      <div id="ad-slot">
+        <div class="ad-placeholder">
+          <p>広告枠</p>
+          <p class="ad-note">配信サービスのコードに差し替えると、ここに広告が出ます。</p>
+        </div>
+      </div>
+      <p id="ad-timer">あと 3 秒</p>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
