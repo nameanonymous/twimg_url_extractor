@@ -6,7 +6,7 @@ X（旧Twitter）の投稿URLを貼ると、その投稿についている画像
 
 ## 公開サイト
 
-GitHub Pages: https://nameanonymous.github.io/twimg-url-extractor/
+GitHub Pages: https://nameanonymous.github.io/twimg_url_extractor/
 
 ## 手元で開く
 
